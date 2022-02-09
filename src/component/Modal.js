@@ -16,6 +16,7 @@ const OpenBtn = styled.button`
   border-radius: 30px;
   background: purple;
   color: #fff;
+  cursor: pointer;
 `;
 
 const ModalWrapper = styled.div`
@@ -44,6 +45,7 @@ const ModalContainer = styled.section`
 
 const ModalCloseBtn = styled.button`
   all: unset;
+  cursor: pointer;
 `;
 
 const ModalContent = styled.p`

@@ -21,6 +21,7 @@ const Input = styled.input`
   background: #aaa;
   border-radius: 40px;
   overflow: hidden;
+  cursor: pointer;
 
   &::before {
     content: "";
