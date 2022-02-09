@@ -7,7 +7,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  min-height: 100px;
 `;
 
 const Input = styled.input`
