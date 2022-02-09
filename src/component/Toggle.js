@@ -2,14 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Layout from "./Layout";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-`;
-
 const Input = styled.input`
   all: unset;
   position: relative;
@@ -72,17 +64,13 @@ const Toggle = () => {
 
   return (
     <Layout title="Toggle">
-      <ContentWrapper>
-        <Input
-          id="toggle-btn"
-          type="checkbox"
-          checked={checked}
-          onChange={onToggle}
-        />
-        <Label htmlFor="toggle-btn">
-          Toggle Switch {checked ? "ON" : "OFF"}
-        </Label>
-      </ContentWrapper>
+      <Input
+        id="toggle-btn"
+        type="checkbox"
+        checked={checked}
+        onChange={onToggle}
+      />
+      <Label htmlFor="toggle-btn">Toggle Switch {checked ? "ON" : "OFF"}</Label>
     </Layout>
   );
 };

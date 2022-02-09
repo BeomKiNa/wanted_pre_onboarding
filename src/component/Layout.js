@@ -11,11 +11,19 @@ const Title = styled.h2`
   font-weight: bold;
 `;
 
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+`;
+
 const Layout = ({ title, children }) => {
   return (
     <Article>
       <Title>{title}</Title>
-      {children}
+      <ContentWrapper>{children}</ContentWrapper>
     </Article>
   );
 };

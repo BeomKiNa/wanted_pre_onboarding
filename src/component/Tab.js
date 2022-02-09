@@ -2,14 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Layout from "./Layout";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-`;
-
 const Nav = styled.nav`
   width: 100%;
 `;
@@ -51,23 +43,21 @@ const Tab = () => {
 
   return (
     <Layout title="Tab">
-      <ContentWrapper>
-        <Nav>
-          <TabList>
-            {Object.keys(tabContent).map((e, i) => (
-              <TabItem
-                key={e}
-                active={activeIndex === i}
-                data-index={i}
-                onClick={onClick}
-              >
-                Tab {e}
-              </TabItem>
-            ))}
-          </TabList>
-        </Nav>
-        <P>Tab menu {tabContent[activeIndex]}</P>
-      </ContentWrapper>
+      <Nav>
+        <TabList>
+          {Object.keys(tabContent).map((e, i) => (
+            <TabItem
+              key={e}
+              active={activeIndex === i}
+              data-index={i}
+              onClick={onClick}
+            >
+              Tab {e}
+            </TabItem>
+          ))}
+        </TabList>
+      </Nav>
+      <P>Tab menu {tabContent[activeIndex]}</P>
     </Layout>
   );
 };

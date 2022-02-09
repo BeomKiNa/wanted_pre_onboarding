@@ -2,14 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Layout from "./Layout";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-`;
-
 const OpenBtn = styled.button`
   all: unset;
   padding: 1rem;
@@ -72,17 +64,15 @@ const Modal = () => {
 
   return (
     <Layout title="Modal">
-      <ContentWrapper>
-        <OpenBtn onClick={onModalOpen}>Open Modal</OpenBtn>
-        {active && (
-          <ModalWrapper onClick={onModalClose}>
-            <ModalContainer>
-              <ModalCloseBtn onClick={onModalClose}>❌</ModalCloseBtn>
-              <ModalContent>Welcome Modal!</ModalContent>
-            </ModalContainer>
-          </ModalWrapper>
-        )}
-      </ContentWrapper>
+      <OpenBtn onClick={onModalOpen}>Open Modal</OpenBtn>
+      {active && (
+        <ModalWrapper onClick={onModalClose}>
+          <ModalContainer>
+            <ModalCloseBtn onClick={onModalClose}>❌</ModalCloseBtn>
+            <ModalContent>Welcome Modal!</ModalContent>
+          </ModalContainer>
+        </ModalWrapper>
+      )}
     </Layout>
   );
 };
