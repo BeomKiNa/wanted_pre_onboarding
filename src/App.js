@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import GlobalStyle from "./component/GlobalStyle";
 import Modal from "./component/Modal";
+import Tab from "./component/Tab";
 import Toggle from "./component/Toggle";
 
 const AppWapper = styled.div`
@@ -22,6 +23,7 @@ function App() {
         <Title>Wanted pre onboarding</Title>
         <Toggle />
         <Modal />
+        <Tab />
       </AppWapper>
     </>
   );
