@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import Layout from "./Layout";
 
@@ -62,6 +62,8 @@ const Tag = () => {
   const [tags, setTags] = useState([]);
   const [text, setText] = useState("");
 
+  const inputRef = useRef();
+
   const onChange = (e) => {
     setText(e.target.value);
   };
@@ -77,9 +79,13 @@ const Tag = () => {
     setTags((prev) => prev.filter((e) => e !== targetText));
   };
 
+  const onWrapperClick = () => {
+    inputRef.current.focus();
+  };
+
   return (
     <Layout title="Tag">
-      <InputWrapper>
+      <InputWrapper onClick={onWrapperClick}>
         <TagsList>
           {tags.map((tag) => (
             <TagItem key={tag}>
@@ -95,6 +101,7 @@ const Tag = () => {
               placeholder="Press enter to add tags"
               value={text}
               onChange={onChange}
+              ref={inputRef}
             />
           </form>
         </TagsList>
