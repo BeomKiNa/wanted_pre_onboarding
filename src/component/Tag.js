@@ -70,6 +70,9 @@ const Tag = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (!text) {
+      return;
+    }
     setTags((prev) => [...prev, text]);
     setText("");
   };
