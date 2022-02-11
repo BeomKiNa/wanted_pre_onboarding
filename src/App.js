@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AutoComplete from "./component/AutoComplete";
 import GlobalStyle from "./component/GlobalStyle";
 import Modal from "./component/Modal";
 import Tab from "./component/Tab";
@@ -26,6 +27,7 @@ function App() {
         <Modal />
         <Tab />
         <Tag />
+        <AutoComplete />
       </AppWapper>
     </>
   );
