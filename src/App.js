@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AutoComplete from "./component/AutoComplete";
+import ClickToEdit from "./component/ClickToEdit";
 import GlobalStyle from "./component/GlobalStyle";
 import Modal from "./component/Modal";
 import Tab from "./component/Tab";
@@ -28,6 +29,7 @@ function App() {
         <Tab />
         <Tag />
         <AutoComplete />
+        <ClickToEdit />
       </AppWapper>
     </>
   );
