@@ -21,14 +21,10 @@ const Input = styled.input`
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: ${(props) => (props.checked ? 100 : 0)}%;
     height: 100%;
     background-color: purple;
     transition: width 0.3s;
-  }
-
-  &:checked::before {
-    width: 100%;
   }
 
   &::after {
@@ -36,18 +32,13 @@ const Input = styled.input`
     display: block;
     position: absolute;
     top: 50%;
-    left: 0%;
+    left: ${(props) => (props.checked ? "calc(100% - 25px)" : "0%")};
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: #fff;
-    transform: translate(8%, -50%);
+    transform: translate(${(props) => (props.checked ? -8 : 8)}%, -50%);
     transition: all 0.3s;
-  }
-
-  &:checked::after {
-    left: calc(100% - 25px);
-    transform: translate(-8%, -50%);
   }
 `;
 
