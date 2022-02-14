@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import styled from "styled-components";
 import Layout from "./Layout";
 
-const InputWrapper = styled.div`
+const Wrapper = styled.div`
   width: 80%;
   height: 50px;
   border: 1px solid #ccc;
@@ -73,7 +73,9 @@ const Tag = () => {
     if (!text) {
       return;
     }
-    setTags((prev) => [...prev, text]);
+    if (!tags.includes(text)) {
+      setTags((prev) => [...prev, text]);
+    }
     setText("");
   };
 
@@ -88,7 +90,7 @@ const Tag = () => {
 
   return (
     <Layout title="Tag">
-      <InputWrapper onClick={onWrapperClick}>
+      <Wrapper onClick={onWrapperClick}>
         <TagsList>
           {tags.map((tag) => (
             <TagItem key={tag}>
@@ -108,7 +110,7 @@ const Tag = () => {
             />
           </form>
         </TagsList>
-      </InputWrapper>
+      </Wrapper>
     </Layout>
   );
 };
