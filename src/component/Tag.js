@@ -49,9 +49,16 @@ const DelBtn = styled.button`
   height: 18px;
   margin-left: 0.5rem;
   background: #fff;
-  color: purple;
+  color: violet;
   border-radius: 50%;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: purple;
+    border: 1px solid red;
+    font-weight: bold;
+  }
 `;
 
 const Input = styled.input`
