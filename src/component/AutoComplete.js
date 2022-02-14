@@ -41,6 +41,12 @@ const ResetBtn = styled.button`
   right: 0;
   transform: translate(-100%, -50%);
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: red;
+    font-weight: bold;
+  }
 `;
 
 const List = styled.ul`
@@ -134,6 +140,7 @@ const AutoComplete = () => {
 
   const listRef = useRef();
   const wrapperRef = useRef();
+  const inputRef = useRef();
 
   const onTextChange = (e) => {
     setText(e.target.value);
@@ -153,6 +160,7 @@ const AutoComplete = () => {
 
   const onReset = () => {
     setText("");
+    inputRef.current.focus();
   };
 
   const onListChose = (listText) => (e) => {
@@ -167,7 +175,12 @@ const AutoComplete = () => {
       <Wrapper ref={wrapperRef}>
         <Container>
           <Form onSubmit={onSubmit} onFocus={onOpenList}>
-            <Input type="text" value={text} onChange={onTextChange} />
+            <Input
+              type="text"
+              value={text}
+              onChange={onTextChange}
+              ref={inputRef}
+            />
             <ResetBtn type="reset" onClick={onReset}>
               x
             </ResetBtn>
