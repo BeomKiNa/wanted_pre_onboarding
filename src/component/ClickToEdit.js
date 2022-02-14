@@ -68,8 +68,10 @@ const ClickToEdit = () => {
     e.target.select();
   };
 
-  const onDoubleClick = (target) => (e) => {
-    setIsEditable((prev) => ({ ...prev, [target]: true }));
+  const onDisplayInput = (target) => (e) => {
+    if (e.type === "dblclick" || (e.type === "keydown" && e.key === "Enter")) {
+      setIsEditable((prev) => ({ ...prev, [target]: true }));
+    }
   };
 
   const onBlur = () => {
@@ -82,7 +84,10 @@ const ClickToEdit = () => {
     <Layout title="ClickToEdit">
       <Wrapper>
         <List onBlur={onBlur}>
-          <Item onDoubleClick={onDoubleClick("name")}>
+          <Item
+            onDoubleClick={onDisplayInput("name")}
+            onKeyDown={onDisplayInput("name")}
+          >
             <span>이름</span>
             {isEditable.name ? (
               <Input
@@ -97,7 +102,10 @@ const ClickToEdit = () => {
               <P tabIndex="0">{name}</P>
             )}
           </Item>
-          <Item onDoubleClick={onDoubleClick("age")}>
+          <Item
+            onDoubleClick={onDisplayInput("age")}
+            onKeyDown={onDisplayInput("age")}
+          >
             <span>나이</span>
             {isEditable.age ? (
               <Input
