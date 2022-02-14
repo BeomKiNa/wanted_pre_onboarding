@@ -1,5 +1,9 @@
 # wanted_pre_onboarding
 
+이 프로젝트는 Github Pages로 배포되어 아래의 링크에서 확인하실 수 있습니다.
+
+[Wanted pre onboarding - NaBeomKi](https://nabeomki.github.io/wanted_pre_onboarding)
+
 CSS를 위해 아래의 패키지를 사용했습니다.
 
 - styled-components
